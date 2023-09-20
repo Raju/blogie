@@ -1,0 +1,8 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "✨ Commit-msg hook started...🚀"
+echo "✨ Verifying the commit message...📝"
+start=$(date +%s)
+end=$(date +%s)
+echo "✨ Done in $(($end-$start))s"

@@ -1,0 +1,499 @@
+{
+	"root": true,
+	"ignorePatterns": [
+		"node_modules/**",
+		"**/node_modules/**",
+		"bower_components/**",
+		"**/bower_components/**"
+	],
+	"overrides": [
+		{
+			"files": [
+				"**/*.js?(x)"
+			],
+			"excludedFiles": [
+				"**/*.ts?(x)",
+				"**/*.html",
+				"**/*.css",
+				"**/*.scss",
+				"**/*.json"
+			],
+			"env": {
+				"browser": true,
+				"es6": true,
+				"es2016": true,
+				"es2017": true,
+				"es2018": true,
+				"es2019": true,
+				"es2020": true,
+				"es2021": true,
+				"es2022": true,
+				"jest": true
+			},
+			"extends": [
+				"airbnb",
+				"plugin:react/recommended",
+				"plugin:react/jsx-runtime",
+				"plugin:import/recommended",
+				"plugin:jsx-a11y/recommended",
+				"plugin:react-hooks/recommended",
+				"prettier"
+			],
+			"parserOptions": {
+				"ecmaVersion": "latest",
+				"sourceType": "module",
+				"ecmaFeatures": {
+					"globalReturn": true,
+					"impliedStrict": true,
+					"jsx": true
+				},
+				"project": "./jsconfig.eslint.json"
+			},
+			"plugins": [
+				"react",
+				"import",
+				"jsx-a11y",
+				"react-hooks",
+				"prettier"
+			],
+			"rules": {
+				/**
+					* 1. Prettier - prettier / eslint-plugin-prettier / eslint-config-prettier
+					*/
+				"jsx-a11y/click-events-have-key-events": 0,
+				"jsx-a11y/no-static-element-interactions": 0,
+				"no-nested-ternary": 0,
+				"react/button-has-type": 0,
+				"no-underscore-dangle": 0,
+				"prettier/prettier": [
+					2,
+					{
+						"tabWidth": 2,
+						"useTabs": true,
+						"semi": true,
+						"singleQuote": false,
+						"quoteProps": "consistent",
+						"jsxSingleQuote": false,
+						"trailingComma": "all",
+						"bracketSpacing": true,
+						"bracketSameLine": false,
+						"arrowParens": "avoid",
+						"requirePragma": false,
+						"insertPragma": false,
+						"proseWrap": "always",
+						"htmlWhitespaceSensitivity": "css",
+						"vueIndentScriptAndStyle": true,
+						"endOfLine": "lf",
+						"embeddedLanguageFormatting": "auto",
+						"singleAttributePerLine": true
+					}
+				],
+				/**
+					* 2. Eslint - eslint
+					*/
+				"no-await-in-loop": 2,
+				"no-self-compare": 2,
+				"no-unused-vars": [
+					2,
+					{
+						"vars": "all",
+						"varsIgnorePattern": "^_",
+						"args": "all",
+						"argsIgnorePattern": "^_",
+						"caughtErrors": "all",
+						"caughtErrorsIgnorePattern": "^_",
+						"destructuredArrayIgnorePattern": "^_",
+						"ignoreRestSiblings": false
+					}
+				],
+				"no-use-before-define": [
+					2,
+					{
+						"functions": true,
+						"classes": true,
+						"variables": true
+					}
+				],
+				"block-scoped-var": 2,
+				"camelcase": [
+					2,
+					{
+						"properties": "always",
+						"ignoreDestructuring": true,
+						"ignoreImports": true,
+						"ignoreGlobals": true
+					}
+				],
+				"consistent-return": 0,
+				"curly": [ // --fix
+					2,
+					"multi-line"
+				],
+				"func-names": [
+					2,
+					"as-needed",
+					{
+						"generators": "as-needed"
+					}
+				],
+				"default-case": 2,
+				"default-case-last": 2,
+				"default-param-last": 2,
+				"id-denylist": [
+					2,
+					"cb",
+					"callback"
+				],
+				"id-length": [
+					2,
+					{
+						"min": 3,
+						"max": 30,
+						"properties": "always",
+						"exceptions": [
+							"i",
+							"j",
+							"k",
+							"id",
+							"db"
+						]
+					}
+				],
+				"id-match": [
+					0,
+					"^(_|--)?([a-zA-Z]+)(--)?([a-zA-Z]+)(__)?([a-zA-Z]+)(\\$)?$",
+					{
+						"properties": true,
+						"classFields": true,
+						"onlyDeclarations": true,
+						"ignoreDestructuring": true
+					}
+				],
+				"no-console": [
+					2,
+					{
+						"allow": [
+							"log",
+							"error",
+							"warn"
+						]
+					}
+				],
+				"arrow-body-style": [
+					2,
+					"as-needed",
+					{
+						"requireReturnForObjectLiteral": true
+					}
+				],
+				"object-shorthand": [ // --fix
+					2,
+					"consistent-as-needed"
+				],
+				"spaced-comment": [ // --fix
+					2,
+					"always",
+					{
+						"block": {
+							"balanced": true
+						}
+					}
+				],
+				"key-spacing": [ // --fix
+					2,
+					{
+						"mode": "strict"
+					}
+				],
+				"jsx-quotes": [ // default --fix
+					2,
+					"prefer-double"
+				],
+				/**
+         * 3. React - eslint-plugin-react
+         */
+				"react/jsx-filename-extension": [
+					2,
+					{
+						"extensions": [
+							".js",
+							".jsx",
+							".ts",
+							".tsx"
+						]
+					}
+				],
+				"react/function-component-definition": [ // --fix
+					2,
+					{
+						"namedComponents": "arrow-function",
+						"unnamedComponents": "arrow-function"
+					}
+				],
+				"react/forbid-prop-types": [
+					2,
+					{
+						"forbid": [],
+						"checkContextTypes": true,
+						"checkChildContextTypes": true
+					}
+				],
+				/**
+         * 4. Import - eslint-plugin-import
+         */
+				"import/consistent-type-specifier-style": [
+					2,
+					"prefer-top-level"
+				],
+				"import/default": 2,
+				"import/dynamic-import-chunkname": [
+					2,
+					{
+						"importFunctions": [
+							"dynamicImport"
+						],
+						"webpackChunknameFormat": "[a-zA-Z0-57-9-/_]+"
+					}
+				],
+				"import/export": 2,
+				"import/exports-last": 2,
+				"import/extensions": [
+					2,
+					"never",
+					{
+						"ignorePackages": true,
+						"pattern": {
+							"html": "never",
+							"css": "always",
+							"scss": "always",
+							"js": "never",
+							"jsx": "never",
+							"ts": "never",
+							"tsx": "never"
+						}
+					}
+				],
+				"import/first": 2,
+				"import/group-exports": 2,
+				"import/max-dependencies": [
+					"error",
+					{
+						"max": 30,
+						"ignoreTypeImports": false
+					}
+				],
+				"import/named": 2,
+				"import/namespace": [
+					2,
+					{
+						"allowComputed": false
+					}
+				],
+				"import/newline-after-import": [
+					2,
+					{
+						"count": 1,
+						"considerComments": true
+					}
+				],
+				"import/no-absolute-path": [
+					2,
+					{
+						"esmodule": true,
+						"commonjs": true,
+						"amd": true
+					}
+				],
+				"import/no-amd": 2,
+				"import/no-anonymous-default-export": [
+					2,
+					{
+						"allowArray": false,
+						"allowArrowFunction": false,
+						"allowAnonymousClass": false,
+						"allowAnonymousFunction": false,
+						"allowCallExpression": true,
+						"allowLiteral": false,
+						"allowObject": false
+					}
+				],
+				"import/no-commonjs": [
+					2,
+					{
+						"allowRequire": true,
+						"allowConditionalRequire": true,
+						"allowPrimitiveModules": true
+					}
+				],
+				"import/no-cycle": 0,
+				"import/no-default-export": 0,
+				"import/no-deprecated": 2,
+				"import/no-duplicates": [
+					"error",
+					{
+						"considerQueryString": true,
+						"prefer-inline": true
+					}
+				],
+				"import/no-dynamic-require": 2,
+				"import/no-empty-named-blocks": 2,
+				"import/no-extraneous-dependencies": 0,
+				"import/no-import-module-exports": [
+					"error",
+					{
+						"exceptions": []
+					}
+				],
+				"import/no-internal-modules": [
+					2,
+					{
+						"allow": [
+							"**/public/**/*",
+							"**/src/**/*",
+							"**/node_modules/**/*"
+						]
+					}
+				],
+				"import/no-mutable-exports": 2,
+				"import/no-named-as-default-member": 2,
+				"import/no-named-as-default": 2,
+				"import/no-named-default": 2,
+				"import/no-named-export": 0,
+				"import/no-namespace": 2,
+				"import/no-nodejs-modules": [
+					2,
+					{
+						"allow": [
+							"path"
+						]
+					}
+				],
+				"import/no-relative-packages": 2,
+				"import/no-relative-parent-imports": 0,
+				"import/no-restricted-paths": 2,
+				"import/no-self-import": 2,
+				"import/no-unassigned-import": [
+					2,
+					{
+						"allow": [
+							"**/*.css",
+							"**/*.scss",
+							"**/*.svg",
+							"**/bootstrap.min.css",
+							"**/bootstrap.bundle.min",
+							"**/popper",
+							"**/jest-dom"
+						]
+					}
+				],
+				"import/no-unresolved": 0,
+				"import/no-unused-modules": [
+					2,
+					{
+						"missingExports": true,
+						"unusedExports": true,
+						"src": [],
+						"ignoreExports": []
+					}
+				],
+				"import/no-useless-path-segments": [
+					2,
+					{
+						"noUselessIndex": true
+					}
+				],
+				"import/no-webpack-loader-syntax": 2,
+				"import/order": [
+					2,
+					{
+						"groups": [
+							"builtin",
+							"external",
+							"internal",
+							[
+								"parent",
+								"sibling"
+							],
+							"index",
+							"object",
+							"type"
+						],
+						"pathGroups": [
+							{
+								"pattern": "@public/**",
+								"group": "external",
+								"position": "after"
+							},
+							{
+								"pattern": "@src/**",
+								"group": "external",
+								"position": "after"
+							}
+						],
+						"newlines-between": "always",
+						"alphabetize": {
+							"order": "asc",
+							"orderImportKind": "asc",
+							"caseInsensitive": false
+						},
+						"warnOnUnassignedImports": true
+					}
+				],
+				"import/prefer-default-export": [
+					2,
+					{
+						"target": "any"
+					}
+				],
+				"import/unambiguous": 2,
+				/**
+					* 5. React Hooks - eslint-plugin-react-hooks
+					*/
+				"react-hooks/rules-of-hooks": "error",
+				"react-hooks/exhaustive-deps": "warn",
+				"class-methods-use-this": 0,
+				// JSX a11y
+				"jsx-a11y/label-has-associated-control": 0
+			},
+			"settings": {
+				"react": {
+					"createClass": "createReactClass",
+					"pragma": "React",
+					"fragment": "Fragment",
+					"version": "detect",
+					"flowVersion": "0.53"
+				},
+				"import/extensions": [
+					".js",
+					".jsx"
+				],
+				"import/ignore": {
+					"node_modules": "commonjs"
+				},
+				"import/docstyle": [
+					"jsdoc"
+				],
+				"import/cache": {
+					"lifetime": "Infinity"
+				},
+				"import/resolver": {
+					"eslint-import-resolver-custom-alias": {
+						"alias": {
+							"@public": "./public",
+							"@app": "./src/app",
+							"@common": "./src/common",
+							"@components": "./src/components",
+							"@config": "./src/config",
+							"@lib": "./src/lib",
+							"@redux": "./src/redux",
+							"@utils": "./src/utils"
+						},
+						"extensions": [
+							".js"
+						]
+					}
+				}
+			}
+		}
+	]
+}

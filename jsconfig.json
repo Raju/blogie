@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "baseUrl": "./",
+    "paths": {
+      "@public/*": [
+        "public/*"
+      ],
+      "@app/*": [
+        "src/app/*"
+      ],
+      "@backend/*": [
+        "src/backend/*"
+      ],
+      "@common/*": [
+        "src/common/*",
+      ],
+      "@components/*": [
+        "src/components/*",
+      ],
+      "@config/*": [
+        "src/config/*",
+      ],
+      "@utils/*": [
+        "src/utils/*",
+      ],
+      "@redux/*": [
+        "src/redux/*",
+      ]
+    }
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/node_modules/**",
+    "**/dist",
+    "**/dist/**",
+    "**/.next",
+    "**/.next/**"
+  ]
+}
