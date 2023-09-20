@@ -53,7 +53,7 @@ const BlogDetails = () => {
 
                 <hr />
 
-                <Link href="/" className="flex justify-center gap-5 my-5">
+                <Link href="#" className="flex justify-center gap-5 my-5">
                   <button className="bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700">
                     Author - {blog.author}
                   </button>
